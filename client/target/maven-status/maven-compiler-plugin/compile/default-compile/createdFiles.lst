@@ -1,0 +1,4 @@
+com\example\demo\DemoApplication.class
+com\example\demo\RuleConfig.class
+com\example\demo\URuleServletRegistration.class
+com\example\demo\RuleController.class

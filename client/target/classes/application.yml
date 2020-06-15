@@ -1,0 +1,12 @@
+urule:
+  resporityServerUrl: http://localhost:8787
+  knowledgeUpdateCycle: 1
+
+server:
+  port: 7777
+
+
+
+consumer:
+    knowledge: ${URULE_KNOWLEDGE_PATH:test/dflow}
+    flowId: ${URULE_FLOW_ID:test-flow}
