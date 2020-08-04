@@ -27,6 +27,7 @@ public class TestController {
     public void test() {
 
         TaskDTO taskDTO = new TaskDTO();
+        taskDTO.setId(UUID.randomUUID().toString().replace("_",""));
         taskDTO.setTaskStatus("2");
         LocalDate now = LocalDate.now();
         Date date = new Date();
@@ -34,6 +35,8 @@ public class TestController {
         taskDTO.setSoc("jifen");
 
         List set = new ArrayList();
+
+
 
         set.add("name1");
         set.add("name2");

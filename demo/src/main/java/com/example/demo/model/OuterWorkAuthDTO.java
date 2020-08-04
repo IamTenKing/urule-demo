@@ -4,10 +4,7 @@ import com.bstek.urule.model.Label;
 import lombok.Data;
 
 /**
- * OuterWorkAuthDTO class
  *
- * @author ZF
- * @date 2018/10/17
  */
 @Data
 public class OuterWorkAuthDTO {

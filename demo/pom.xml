@@ -33,6 +33,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
+		<!--urule依赖-->
 		<dependency>
 			<groupId>com.bstek.urule</groupId>
 			<artifactId>urule-console</artifactId>

@@ -8,5 +8,7 @@ server:
 
 
 consumer:
+   #配置知识包的路径 项目名/知识包编码
     knowledge: ${URULE_KNOWLEDGE_PATH:test/dflow}
+    #决策流的id
     flowId: ${URULE_FLOW_ID:test-flow}

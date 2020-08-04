@@ -38,10 +38,12 @@ public class Transform<T> {
         if(dto != null){
             try{
                 KnowledgeService knowledgeService = (KnowledgeService) Utils.getApplicationContext().getBean(KnowledgeService.BEAN_ID);
+                //getgetKnowledge 获取知识包，如果内存中没有缓存就会请求远程服务器
                 KnowledgePackage knowledgePackage = knowledgeService.getKnowledge(knowledgePath);
                 KnowledgeSession session = KnowledgeSessionFactory.newKnowledgeSession(knowledgePackage);
 
                 if(session != null){
+                    //新建空对象，传入引擎，进行赋值操作
                     OuterWorkDTO outerWorkDTO = new OuterWorkDTO();
                     //传入dto
                     session.insert(dto);
@@ -50,10 +52,13 @@ public class Transform<T> {
                     OuterWorkAuthDTO outerWorkAuthDTO = new OuterWorkAuthDTO();
                     OutBean outBean = new OutBean();
                     session.insert(outBean);
-                    //传入OuterWorkAuthDTO
+                    //传入OuterWorkAuthDTO，复用此对象生成集合
                     session.insert(outerWorkAuthDTO);
                     session.startProcess(flowId);
 
+                    //执行完流程
+                    //空对象已经赋值完成
+                    System.out.println("标题"+outerWorkDTO.getTitle());
                     //获取规则中产生的参数
                     Boolean flag = (Boolean)session.getParameter("flag");
                     List<OutBean> outBeans = (List<OutBean>)session.getParameter("outBeans");
